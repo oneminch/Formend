@@ -198,11 +198,11 @@ def submit(table_name):
 
     # Get database environment variables
     pg_db = {
-        "dbname": os.environ.get("DATABASE_NAME"),
-        "host": os.environ.get("DATABASE_HOST"),
-        "user": os.environ.get("DATABASE_USER"),
-        "password": os.environ.get("DATABASE_PASSWORD"),
-        "port": os.environ.get("DATABASE_PORT")
+        "dbname": os.environ.get("DB_DATABASE"),
+        "host": os.environ.get("DB_HOST"),
+        "user": os.environ.get("DB_USER"),
+        "password": os.environ.get("DB_PASSWORD"),
+        "port": os.environ.get("DB_PORT")
     }
 
     # Connect to SQL database
