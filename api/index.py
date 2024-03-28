@@ -169,7 +169,7 @@ def submit(table_name):
     
     # referrer_name -> url mappings for redirections
     referrers = { 
-        "portfolio": "https://oneminch.dev/contact",
+        "portfolio": "https://minch.dev/contact",
         "test": "/form"
     }
         
