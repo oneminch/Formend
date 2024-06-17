@@ -11,44 +11,10 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     """
-    Render basic home page specifying what the project is. 
+    Render project's homepage. 
     """
     
-    html = """
-    <html>
-        <head>
-            <title>Form Backend</title>
-            <script src="https://cdn.tailwindcss.com"></script>
-            <link rel="preconnect" href="https://fonts.bunny.net">
-            <link href="https://fonts.bunny.net/css?family=ibm-plex-mono:400" rel="stylesheet" />
-            <style>
-                * { font-family: "IBM Plex Mono", monospace; }
-            </style>
-        </head>
-        <body class="bg-gray-800">
-            <section 
-                class="mx-auto w-11/12 mt-10 max-w-[56rem] border-2 border-gray-600 rounded-xl bg-gray-700  text-gray-50 px-10 py-12">
-                <h2 
-                    class="text-center mb-8 text-2xl">
-                    This project is a serverless backend that handles form submissions for my projects.
-                </h2>
-                <h3 
-                    class="text-center font-mono my-10 text-8xl font-bold">
-                    📋
-                </h3>
-                <!-- 
-                <a 
-                    class='text-center inline-block mx-auto py-3 px-5 rounded-lg bg-gray-600' 
-                    href='/form'>
-                    Go to form
-                </a>
-                -->
-            </section>
-        </body>
-    </html>
-    """
-
-    return html
+    return render_template("index.html")
 
 
 @app.post("/submit/<string:table_name>")
@@ -174,32 +140,7 @@ def submit(table_name):
 #     Renders a basic form demo page for testing purposes
 #     """
 
-#     return """
-#       <html>
-#         <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
-#       </html>
-#       <h1>Form Submission Demo</h1>
-#       <br />
-#       <form method="post" action="http://localhost:3000/submit/test">
-#         <input
-#           name="name"
-#           type="text"
-#           value="Test"
-#           placeholder="enter some text"
-#         />
-#         <input
-#           name="email"
-#           type="email"
-#           value="test@example.com"
-#           placeholder="enter some text"
-#         />
-#         <textarea 
-#           name="message"
-#           placeholder="Enter message">Hello, world!</textarea>
-
-#         <button type="submit">Submit</button>
-#       </form>
-#     """
+#     return render_template("form.html")
 
 
 @app.route('/', defaults={'path': ''})
