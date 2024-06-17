@@ -12,6 +12,7 @@
     />
     <style>
       * {
+        box-sizing: border-box;
         font-family: "IBM Plex Mono", monospace;
       }
     </style>
@@ -26,6 +27,7 @@
         alt="Formend Logo"
         class="w-40 h-40 border border-zinc-800 rounded-full mx-auto"
       />
+      
       <div class="space-y-8">
         <h1
           class="text-8xl font-bold relative before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:via-85% before:via-zinc-950/95 before:to-zinc-950"
@@ -36,14 +38,27 @@
           A serverless backend template for handling form submissions.
         </p>
       </div>
-      <a
-        class="text-center inline-block mx-auto py-1 px-4 rounded-full bg-emerald-500 text-zinc-950 font-medium"
-        href="https://github.com/oneminch/Formend"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Self-Host
-      </a>
+      
+      <div class="flex items-center justify-center gap-x-4">
+        <a
+          class="flex h-8 items-center gap-2 rounded-md border border-[#3a3a3a] bg-[#1a1a1a] px-3 text-center text-[#ededed]"
+          href="https://github.com/oneminch/Formend"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://api.iconify.design/simple-icons:github.svg?color=%23ededed"
+            alt="GitHub Logo"
+            class="text-white"
+          />
+          Source Code
+        </a>
+        <a
+          href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Foneminch%2FFormend">
+          <img src="https://vercel.com/button" alt="Deploy with Vercel"
+        /></a>
+      </div>
+
       <!-- 
       <a 
           class='text-center inline-block mx-auto py-3 px-5 rounded-lg bg-zinc-600' 
