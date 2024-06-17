@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/sakura.css/css/sakura.css"
+      type="text/css"
+    />
+    <title>Formend - Test it out locally</title>
+  </head>
+  <body>
+    <h1>Form Submission Demo</h1>
+    <br />
+    <form method="post" action="http://localhost:3000/submit/test">
+      <input
+        name="name"
+        type="text"
+        value="Test"
+        placeholder="enter some text"
+      />
+      <input
+        name="email"
+        type="email"
+        value="test@example.com"
+        placeholder="enter some text"
+      />
+      <textarea name="message" placeholder="Enter message">
+Hello, world!</textarea
+      >
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
