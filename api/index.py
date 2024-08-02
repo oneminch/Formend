@@ -2,7 +2,8 @@ import os
 import psycopg2
 from string import Template
 from flask import Flask, redirect, request, render_template
-from api.email_utils import generate_messages, send_email_notification
+from api.utils.email import generate_messages, send_email_notification
+from api.utils.config import get_config
 
 
 app = Flask(__name__)
@@ -29,10 +30,8 @@ def submit(table_name):
     receiver_email = os.environ.get("RECEIVER_EMAIL")
     
     # referrer_name -> url mappings for redirections
-    referrers = { 
-        "portfolio": "https://minch.dev/contact",
-        "test": "/form"
-    }
+    config = get_config()
+    referrers = config["referrers"]
         
     # Create a tuple of email addresses
     email_addresses = (sender_email, receiver_email)
@@ -134,13 +133,13 @@ def submit(table_name):
     return "Form endpoint doesn't exist"
 
 
-# @app.route('/form')
-# def form():
-#     """
-#     Renders a basic form demo page for testing purposes
-#     """
+@app.route('/form')
+def form():
+    """
+    Renders a basic form demo page for testing purposes
+    """
 
-#     return render_template("form.html")
+    return render_template("form.html")
 
 
 @app.route('/', defaults={'path': ''})
